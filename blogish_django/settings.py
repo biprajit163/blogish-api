@@ -39,12 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blogish.apps.BlogishConfig',
     'corsheaders',
     'blogish',
     'rest_framework',
 ]
 
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.SessionAuthentication",
+    ),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -125,6 +129,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000",
-]
+CORS_ALLOW_ALL_ORIGINS = True
