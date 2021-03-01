@@ -1,0 +1,1 @@
+web: gunicorn blogish_django.wsgi
