@@ -27,3 +27,4 @@ class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
         fields = ('id', 'user', 'title', 'image', 'body', 'comments')
+        depth = 1

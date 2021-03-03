@@ -9,7 +9,7 @@ class User(models.Model):
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
     description = models.TextField(blank=True)
-    profile_picture = models.CharField(max_length=1000, blank=True)
+    profile_picture = models.TextField(blank=True)
 
     def __str__(self):
         return self.username
@@ -24,8 +24,8 @@ class Blog(models.Model):
     )
 
     title = models.CharField(max_length=100)
-    image = models.CharField(max_length=1000)
-    body = models.TextField()
+    image = models.TextField(blank=True)
+    body = models.TextField(blank=True)
 
     def __str__(self):
         return self.title
@@ -44,4 +44,4 @@ class Comment(models.Model):
         related_name='comments'
     )
 
-    text = models.TextField()
+    text = models.TextField(blank=True)
